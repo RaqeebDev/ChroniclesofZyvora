@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bj27wdxwgb24o"]
+
+[node name="CamOrigin" type="Node3D"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(0.999979, 0, 0.00651003, 0, 1, 0, -0.00651003, 0, 0.999979, 0, 0, 0)
+spring_length = 4.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.97922)

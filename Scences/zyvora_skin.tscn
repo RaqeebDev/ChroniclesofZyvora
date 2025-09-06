@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://4bcg08gtdou3"]
+
+[ext_resource type="PackedScene" uid="uid://bic4vkfioul5" path="res://Exports/chars/zyvora/godette.glb" id="1_ff5lg"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1is26"]
+
+[node name="ZyvoraSkin" instance=ExtResource("1_ff5lg")]
+transform = Transform3D(-0.99932, 0, -0.0368704, 0, 1, 0, 0.0368704, 0, -0.99932, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_1is26")
+anim_player = NodePath("../AnimationPlayer")
