@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Chronicles of Zyvora"
-run/main_scene="uid://bvylw4tya5jn0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [editor_plugins]
