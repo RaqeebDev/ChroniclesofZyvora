@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvmg7h5h2jdjp"]
+[gd_scene load_steps=6 format=3 uid="uid://bvmg7h5h2jdjp"]
 
 [ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="1_b5b4y"]
 [ext_resource type="PackedScene" uid="uid://jd3e68kd07de" path="res://player/player.tscn" id="2_kvfeg"]
 [ext_resource type="Environment" uid="uid://bely8qfioes6r" path="res://seens/envi.tres" id="2_qjqrb"]
+[ext_resource type="PackedScene" uid="uid://tiikosphhxau" path="res://seens/mob.tscn" id="4_wvqub"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvfeg"]
 albedo_color = Color(0.002181, 0.540566, 1.92523e-07, 1)
@@ -27,3 +28,6 @@ environment = ExtResource("2_qjqrb")
 
 [node name="Player" parent="." instance=ExtResource("2_kvfeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Mob" parent="." instance=ExtResource("4_wvqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.832516, 0.838327, -2.9561)

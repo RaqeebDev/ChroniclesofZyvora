@@ -16,3 +16,5 @@ shape = SubResource("SphereShape3D_mpji8")
 
 [node name="projectile_model" parent="." instance=ExtResource("1_vgwvg")]
 transform = Transform3D(-0.00971829, 0, 0.50752, 0, 0.507613, 0, -0.50752, 0, -0.00971829, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
