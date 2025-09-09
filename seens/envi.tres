@@ -1,11 +1,19 @@
-[gd_resource type="Environment" format=3 uid="uid://bely8qfioes6r"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bely8qfioes6r"]
+
+[ext_resource type="Texture2D" uid="uid://dsqwcnejjyxnh" path="res://font/clouds_anime_6k.jpg" id="1_5a2w7"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_nfnhx"]
+panorama = ExtResource("1_5a2w7")
+
+[sub_resource type="Sky" id="Sky_q3oh7"]
+sky_material = SubResource("PanoramaSkyMaterial_nfnhx")
 
 [resource]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.121569, 0.678431, 0.894118, 1)
+sky = SubResource("Sky_q3oh7")
 ambient_light_color = Color(0.768627, 0.690196, 0.643137, 1)
 tonemap_mode = 2
-fog_enabled = true
 fog_light_color = Color(0.109804, 0.376471, 0.509804, 1)
 fog_density = 0.0
 fog_height = -216.78

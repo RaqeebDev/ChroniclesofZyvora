@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://jd3e68kd07de"]
+[gd_scene load_steps=6 format=3 uid="uid://jd3e68kd07de"]
 
 [ext_resource type="PackedScene" uid="uid://b0rj04t2ytfuv" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://pvmdqi71l3jt" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://sc61acebncq5" path="res://player/reticle.png" id="3_g1dw6"]
+[ext_resource type="AudioStream" uid="uid://ql1bdwq5eyvx" path="res://player/gun_shoot.wav" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -22,7 +23,7 @@ transform = Transform3D(-0.499512, -0.0679009, 0.0461054, -0.0563993, 0.490562, 
 
 [node name="Marker3D" type="Marker3D" parent="Camera3D"]
 unique_name_in_owner = true
-transform = Transform3D(0.976537, -5.40714e-09, 0.215349, 0.0296097, 0.990502, -0.13427, -0.213304, 0.137496, 0.967262, 0.757129, -0.296861, -1.0633)
+transform = Transform3D(0.961389, 0.00854722, 0.275061, 0.0296097, 0.990502, -0.13427, -0.273596, 0.13723, 0.952005, 0.757129, -0.296861, -1.0633)
 
 [node name="Reticle" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -43,3 +44,7 @@ expand_mode = 1
 unique_name_in_owner = true
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_yw30f")

@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	const SPEED = 5.5
 	
 	var input_direction_2D = Input.get_vector(
-		"left","right","forward","backward"
+		"right","left","forward","backward"
 	)		
 	var input_direction_3D = Vector3(
 		input_direction_2D.x,0.0,input_direction_2D.y
@@ -47,3 +47,4 @@ func shoot_bullet():
 
 	new_bullet.global_transform = %Marker3D.global_transform
 	%Timer.start()
+	%AudioStreamPlayer.play()

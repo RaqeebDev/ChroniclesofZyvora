@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://vc7o4ysek5o2"]
+
+[ext_resource type="PackedScene" uid="uid://cm2detoeqlnrg" path="res://mob/spawner/spawner_model.glb" id="1_ty0ot"]
+[ext_resource type="Shader" uid="uid://cfnwyva3u4qeb" path="res://mob/spawner/spawner_halo.gdshader" id="2_l1lvu"]
+[ext_resource type="Material" uid="uid://jvnbftghahty" path="res://mob/spawner/spawner_screen_material.tres" id="3_6qum0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_583ex"]
+render_priority = 0
+shader = ExtResource("2_l1lvu")
+shader_parameter/color = Color(0.0845106, 0.37361, 0.257162, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_he3yd"]
+albedo_color = Color(1, 0.303437, 0.998185, 1)
+metallic = 0.35
+roughness = 0.3
+rim_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxvlc"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="Animation" id="Animation_l1lvu"]
+resource_name = "wings"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6qum0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_583ex"]
+_data = {
+&"RESET": SubResource("Animation_6qum0"),
+&"wings": SubResource("Animation_l1lvu")
+}
+
+[node name="spawner_model" instance=ExtResource("1_ty0ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84011, 0)
+
+[node name="halo" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_583ex")
+
+[node name="Body" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_he3yd")
+surface_material_override/1 = ExtResource("3_6qum0")
+
+[node name="Top" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.783957, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_bxvlc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_583ex")
+}
+autoplay = "wings"
