@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7e0tvxf11ihx"]
+[gd_scene load_steps=13 format=3 uid="uid://b7e0tvxf11ihx"]
 
 [ext_resource type="Script" uid="uid://cfrhswflgvsgy" path="res://SCRIPTS/level.gd" id="1_smu2j"]
 [ext_resource type="Material" uid="uid://c4eqic67btohh" path="res://seens/horrorscence.tres" id="2_2k1x1"]
 [ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="3_jamkx"]
 [ext_resource type="Texture2D" uid="uid://bilr5urhiptvt" path="res://Assets/free-skybox-space-nebula/textures/space_nebula_6k.jpg" id="4_smu2j"]
-[ext_resource type="PackedScene" uid="uid://6i6hvngoxjr5" path="res://seens/mob_spawner_3d.tscn" id="6_vcmhv"]
+[ext_resource type="PackedScene" uid="uid://4bmncsa6lgsr" path="res://seens/portal.tscn" id="6_11hsr"]
+[ext_resource type="PackedScene" uid="uid://jd3e68kd07de" path="res://player/player.tscn" id="7_smu2j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp1dk"]
 albedo_color = Color(0.249815, 0.237352, 0, 1)
@@ -115,9 +116,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_juoq7")
 
-[node name="MobSpawner3D5" parent="." instance=ExtResource("6_vcmhv")]
-transform = Transform3D(0.998406, 0.0564314, 2.4647e-10, -0.0557692, 0.986691, -0.152744, -0.00861958, 0.152501, 0.988266, -38.1275, 40.6852, -8.02803)
-
 [node name="CSGBox3D24" type="CSGBox3D" parent="."]
 transform = Transform3D(26.0201, 0, 0, 0, 20.7772, 0, 0, 0, 17.5497, -0.399264, -9.16282, 66.835)
 material_override = ExtResource("2_2k1x1")
@@ -131,5 +129,10 @@ mesh = SubResource("CapsuleMesh_u2ah7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
 shape = SubResource("ConvexPolygonShape3D_11hsr")
 
+[node name="portal" parent="." instance=ExtResource("6_11hsr")]
+transform = Transform3D(4.95498, 0, 0, 0, 4.95498, 0, 0, 0, 5.50001, 1.32123, 3.10941, 20.7638)
+
+[node name="Player" parent="." instance=ExtResource("7_smu2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78231, 5.03894, 64.0592)
+
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
-[connection signal="mob_spawned" from="MobSpawner3D5" to="." method="_on_mob_spawner_3d_mob_spawned"]

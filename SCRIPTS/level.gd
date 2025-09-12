@@ -33,3 +33,7 @@ func _on_mob_spawner_3d_mob_spawned(mob):
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	get_tree().reload_current_scene.call_deferred()
+
+
+func _on_portal_body_entered(body: Node3D) -> void:
+	get_tree().change_scene_to_file()

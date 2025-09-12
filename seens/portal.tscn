@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://4bmncsa6lgsr"]
+[gd_scene load_steps=5 format=3 uid="uid://4bmncsa6lgsr"]
 
-[node name="portal" type="Node3D"]
+[ext_resource type="Shader" uid="uid://daxisdcmmcnmd" path="res://seens/portal.tres" id="1_to7i3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sto8g"]
+render_priority = 0
+shader = ExtResource("1_to7i3")
+shader_parameter/Color_Intensity = 4.5
+shader_parameter/portal_color = Color(1, 0.24524, 0.187846, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c0yju"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_to7i3"]
+radius = 19.2189
+
+[node name="portal" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.53864, 0, 0, 0, -0.0811468, -3.53771, 0, 3.53771, -0.0811468, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_sto8g")
+mesh = SubResource("PlaneMesh_c0yju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.193898, 0, 0, 0, 0.183347, 0, 0, 0, 0.0613507, 0, 0, 0)
+shape = SubResource("SphereShape3D_to7i3")
