@@ -1,8 +1,18 @@
 extends CharacterBody3D
 
+var health = 10
+
 
 func _ready():
 	Input.set_mouse_mode( Input.MOUSE_MODE_CAPTURED)
+	
+	
+
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -16,6 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode( Input.MOUSE_MODE_VISIBLE)
 		
 func _physics_process(delta: float) -> void:
+	
 	const SPEED = 5.5
 	
 	var input_direction_2D = Input.get_vector(
@@ -48,3 +59,14 @@ func shoot_bullet():
 	new_bullet.global_transform = %Marker3D.global_transform
 	%Timer.start()
 	%AudioStreamPlayer.play()
+	
+	
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("enemy"):
+		health -= 1
+		if health <=0:
+			get_tree().reload_current_scene()
+			
+		$HealthBar.value = health

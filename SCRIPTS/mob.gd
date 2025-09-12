@@ -12,6 +12,7 @@ var speed = randf_range(2.0,4.0)
 var health = 3
 
 func _physics_process(delta: float) -> void:
+	
 	var direction = global_position.direction_to(player.global_position)
 	direction.y = 0.0
 	linear_velocity = direction*speed	

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4eqic67btohh"]
+
+[ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="1_lgwtg"]
+
+[resource]
+albedo_color = Color(0.774776, 0.0422616, 0.0234831, 1)
+albedo_texture = ExtResource("1_lgwtg")
+metallic = 0.92
+roughness = 0.2
+uv1_scale = Vector3(12, 12, 12)

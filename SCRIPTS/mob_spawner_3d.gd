@@ -8,7 +8,6 @@ signal mob_spawned(mob)
 
 
 
-
 func _on_timer_timeout() -> void:
 	var new_mob = mob_to_spawn.instantiate()
 	add_child(new_mob)

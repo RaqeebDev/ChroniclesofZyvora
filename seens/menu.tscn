@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwgpn8feyvlb5"]
+
+[ext_resource type="PackedScene" uid="uid://duj5dtdchb6s7" path="res://seens/mainmenuscence.tscn" id="1_8f8u1"]
+[ext_resource type="Script" uid="uid://brxv3yuy1pl88" path="res://SCRIPTS/menu.gd" id="1_n3vs3"]
+[ext_resource type="PackedScene" uid="uid://cjpqks4vc7xb4" path="res://seens/fader.tscn" id="2_jftrl"]
+[ext_resource type="FontFile" uid="uid://dyry1md08jl15" path="res://Assets/murder.ttf" id="4_dpvn8"]
+[ext_resource type="AudioStream" uid="uid://0u6k7mkpe0p7" path="res://Assets/sounds/main_theme.wav" id="5_dpvn8"]
+[ext_resource type="AudioStream" uid="uid://x6tc5888gttx" path="res://Assets/sounds/button_hover.wav" id="6_n3vs3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n3vs3"]
+font = ExtResource("4_dpvn8")
+font_size = 256
+
+[sub_resource type="ImageTexture" id="ImageTexture_dpvn8"]
+
+[node name="mainmenu" type="Node3D"]
+script = ExtResource("1_n3vs3")
+
+[node name="mainmenuscence" parent="." instance=ExtResource("1_8f8u1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="fader" parent="CanvasLayer" instance=ExtResource("2_jftrl")]
+
+[node name="Control" type="Control" parent="CanvasLayer/fader"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/fader/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/fader/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -547.5
+offset_right = 547.5
+offset_bottom = 349.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/fader/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "PEW-PEW"
+label_settings = SubResource("LabelSettings_n3vs3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/fader/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -114.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="CanvasLayer/fader"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 780.0
+offset_right = 1234.0
+offset_bottom = 994.0
+size_flags_horizontal = 4
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 7.894, 1)
+theme_override_colors/font_hover_color = Color(59.775, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.26779, 0.26779, 0.26779, 1)
+theme_override_fonts/font = ExtResource("4_dpvn8")
+theme_override_font_sizes/font_size = 250
+theme_override_icons/icon = SubResource("ImageTexture_dpvn8")
+text = "Start"
+flat = true
+
+[node name="Fade_timer" type="Timer" parent="CanvasLayer/fader"]
+
+[node name="main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dpvn8")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="buttonaudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n3vs3")
+
+[connection signal="fade_finished" from="CanvasLayer/fader" to="." method="_on_fader_fade_finished"]
+[connection signal="pressed" from="CanvasLayer/fader/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/fader/Fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
