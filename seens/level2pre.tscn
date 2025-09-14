@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=3 uid="uid://b7e0tvxf11ihx"]
+
+[ext_resource type="Script" uid="uid://dftw2i01uyn2o" path="res://SCRIPTS/level_2.gd" id="1_ulpc5"]
+[ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="3_43fhr"]
+[ext_resource type="Material" uid="uid://c4eqic67btohh" path="res://seens/horrorscence.tres" id="4_tbxqc"]
+[ext_resource type="Texture2D" uid="uid://bilr5urhiptvt" path="res://Assets/free-skybox-space-nebula/textures/space_nebula_6k.jpg" id="5_q4hv4"]
+[ext_resource type="PackedScene" uid="uid://4bmncsa6lgsr" path="res://seens/portal.tscn" id="6_vrimr"]
+[ext_resource type="PackedScene" uid="uid://22upax48r3mt" path="res://seens/level2player.tscn" id="7_ulpc5"]
+[ext_resource type="AudioStream" uid="uid://bovnk56u4u1h6" path="res://Assets/sounds/Death Note - Kira Evil Laugh.mp3" id="7_vb86l"]
+[ext_resource type="AudioStream" uid="uid://hsflgjaoscb7" path="res://addons/audio/out-of-breath-male-176715.mp3" id="8_43fhr"]
+[ext_resource type="AudioStream" uid="uid://cxa0k4yy5jpdv" path="res://addons/audio/scary-breath-43729.mp3" id="9_tbxqc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp1dk"]
+albedo_color = Color(0.249815, 0.237352, 0, 1)
+albedo_texture = ExtResource("3_43fhr")
+roughness = 0.15
+uv1_scale = Vector3(12, 12, 12)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2k1x1"]
+panorama = ExtResource("5_q4hv4")
+
+[sub_resource type="Sky" id="Sky_jamkx"]
+sky_material = SubResource("PanoramaSkyMaterial_2k1x1")
+
+[sub_resource type="Environment" id="Environment_juoq7"]
+background_mode = 2
+sky = SubResource("Sky_jamkx")
+
+[node name="level2pre" type="Node3D"]
+script = ExtResource("1_ulpc5")
+
+[node name="platforms" type="Node3D" parent="."]
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 26.3575)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 29.4947)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 32.4185)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 35.5557)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 38.7208)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 41.858)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 44.8837)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 47.8075)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 50.9447)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 54.1098)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.557508, 0, 0, 0, 0.0741808, 0, 0, 0, 0.153007, 0.12687, -0.299243, 56.9073)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = SubResource("StandardMaterial3D_sp1dk")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.4283, 19.3942)
+use_collision = true
+size = Vector3(10, 20, 10)
+material = ExtResource("4_tbxqc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 0.75, 0.433013, -0.866025, 0.433013, 0.25, 0, -0.5, 0.866025, 11.4509, 2, 32.2277)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_juoq7")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="."]
+transform = Transform3D(26.0201, 0, 0, 0, 20.7772, 0, 0, 0, 17.5497, -0.399264, -9.16282, 66.835)
+material_override = ExtResource("4_tbxqc")
+use_collision = true
+material = ExtResource("4_tbxqc")
+
+[node name="portal" parent="." instance=ExtResource("6_vrimr")]
+transform = Transform3D(4.95498, 0, 0, 0, 4.95498, 0, 0, 0, 5.50001, 1.32123, 3.10941, 20.7638)
+
+[node name="DeathNote-KiraEvilLaugh" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90679, 1.72597, 22.734)
+stream = ExtResource("7_vb86l")
+autoplay = true
+
+[node name="level2player" parent="." instance=ExtResource("7_ulpc5")]
+transform = Transform3D(1.00843, 0, 0, 0, 1.00843, 0, 0, 0, 1.00843, 0, 1.43888, 60.5547)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45.3531)
+stream = ExtResource("8_43fhr")
+volume_db = 52.29
+unit_size = 95.04
+max_distance = 4096.0
+
+[node name="Scary-breath-43729" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.743916, 0.682564, 38.6502)
+stream = ExtResource("9_tbxqc")
+autoplay = true
+max_distance = 4096.0
+
+[connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]

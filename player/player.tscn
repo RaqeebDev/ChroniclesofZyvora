@@ -72,7 +72,7 @@ corner_radius_bottom_left = 10
 radius = 0.561969
 height = 2.21659
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://duj5dtdchb6s7" path="res://seens/mainmenuscence.tscn" id="1_8f8u1"]
 [ext_resource type="Script" uid="uid://brxv3yuy1pl88" path="res://SCRIPTS/menu.gd" id="1_n3vs3"]
 [ext_resource type="PackedScene" uid="uid://cjpqks4vc7xb4" path="res://seens/fader.tscn" id="2_jftrl"]
-[ext_resource type="FontFile" uid="uid://dyry1md08jl15" path="res://Assets/murder.ttf" id="4_dpvn8"]
+[ext_resource type="FontFile" uid="uid://dyry1md08jl15" path="res://Assets/font/murder.ttf" id="4_dpvn8"]
 [ext_resource type="AudioStream" uid="uid://0u6k7mkpe0p7" path="res://Assets/sounds/main_theme.wav" id="5_dpvn8"]
 [ext_resource type="AudioStream" uid="uid://x6tc5888gttx" path="res://Assets/sounds/button_hover.wav" id="6_n3vs3"]
 

@@ -21,5 +21,5 @@ material_override = SubResource("ShaderMaterial_sto8g")
 mesh = SubResource("PlaneMesh_c0yju")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.193898, 0, 0, 0, 0.183347, 0, 0, 0, 0.0613507, 0, 0, 0)
+transform = Transform3D(0.193898, 0, 0, 0, 0.171659, 0, 0, 0, -0.0467182, 0, 0, 0)
 shape = SubResource("SphereShape3D_to7i3")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn468kl23i65u"]
+
+[ext_resource type="PackedScene" uid="uid://cirhw2fvswvn6" path="res://seens/iron-fence-damaged.glb" id="1_n38bw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n38bw"]
+albedo_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n38bw"]
+size = Vector3(0.980347, 0.566956, 0.0128563)
+
+[node name="iron-fence-damaged2" instance=ExtResource("1_n38bw")]
+
+[node name="iron-fence-damaged" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n38bw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00982666, 0.346527, -0.448267)
+shape = SubResource("BoxShape3D_n38bw")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvmg7h5h2jdjp"]
+[gd_scene load_steps=12 format=3 uid="uid://bvmg7h5h2jdjp"]
 
 [ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="1_b5b4y"]
 [ext_resource type="Script" uid="uid://cfrhswflgvsgy" path="res://SCRIPTS/level.gd" id="1_sp1dk"]
@@ -26,6 +26,9 @@ font_color = Color(0.986184, 0.950063, 0.936006, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjk8o"]
 font_size = 55
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hn32"]
+font_size = 64
 
 [node name="level" type="Node3D"]
 script = ExtResource("1_sp1dk")
@@ -224,9 +227,20 @@ offset_bottom = 87.0
 text = "HP:"
 label_settings = SubResource("LabelSettings_gjk8o")
 
+[node name="changelevel" type="Timer" parent="."]
+autostart = true
+
+[node name="timerlabel" type="Label" parent="."]
+offset_left = 848.0
+offset_top = 55.0
+offset_right = 1055.0
+offset_bottom = 159.0
+label_settings = SubResource("LabelSettings_8hn32")
+
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="mob_spawned" from="MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="MobSpawner3D2" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="MobSpawner3D3" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="MobSpawner3D5" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="MobSpawner3D4" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="timeout" from="changelevel" to="." method="_on_changelevel_timeout"]
