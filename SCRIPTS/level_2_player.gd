@@ -5,6 +5,12 @@ const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
+const HIT_STAGGER = 8.0
+var health = 10
+
+
+#signal
+signal player_hit  
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -24,6 +30,11 @@ var gravity = 9.8
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)	
 
 
 func _unhandled_input(event):
@@ -40,6 +51,7 @@ func _physics_process(delta):
 
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		
 		velocity.y = JUMP_VELOCITY
 	
 	
@@ -81,3 +93,32 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+	
+func hit(dir):
+	emit_signal("player_hit")
+	velocity +=dir * HIT_STAGGER
+	
+	
+	if Input.is_action_pressed("shoot") and  %Timer.is_stopped():
+		shoot_bullet()
+	
+func shoot_bullet():
+	const BULLETNEW_3D = preload("res://seens/bulletnew3d.tscn")
+	var new_bullet = BULLETNEW_3D.instantiate()
+	%Marker3D.add_child(new_bullet)
+
+	new_bullet.global_transform = %Marker3D.global_transform
+	%Timer.start()
+	%AudioStreamPlayer.play()	
+	
+	
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("enemy"):
+		health -= 1
+		$HealthBar.value = health
+		
+		if health <= 0:
+			call_deferred("reload_scene")
+
+func reload_scene():
+	get_tree().reload_current_scene()

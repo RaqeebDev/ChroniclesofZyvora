@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var health = 10
+
 
 
 func _ready():
@@ -9,10 +9,7 @@ func _ready():
 	
 
 
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -25,48 +22,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("cancel"):
 		Input.set_mouse_mode( Input.MOUSE_MODE_VISIBLE)
 		
-func _physics_process(delta: float) -> void:
-	
-	const SPEED = 5.5
-	
-	var input_direction_2D = Input.get_vector(
-		"right","left","forward","backward"
-	)		
-	var input_direction_3D = Vector3(
-		input_direction_2D.x,0.0,input_direction_2D.y
-	)
-	var direction = transform.basis * input_direction_3D
-		
-	velocity.x = 	direction.x * SPEED
-	velocity.z = 	direction.z * SPEED
-	
-	velocity.y -= 20.0 * delta
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = 10.0
-	elif Input.is_action_just_released("jump") and velocity.y >0:
-		velocity.y =0
-	
-	move_and_slide()
-	
-	if Input.is_action_pressed("shoot") and  %Timer.is_stopped():
-		shoot_bullet()
-	
-func shoot_bullet():
-	const BULLETNEW_3D = preload("res://seens/bulletnew3d.tscn")
-	var new_bullet = BULLETNEW_3D.instantiate()
-	%Marker3D.add_child(new_bullet)
 
-	new_bullet.global_transform = %Marker3D.global_transform
-	%Timer.start()
-	%AudioStreamPlayer.play()
-	
 	
 
+	
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy"):
-		health -= 1
-		if health <=0:
-			get_tree().reload_current_scene()
-			
-		$HealthBar.value = health
+	
+	

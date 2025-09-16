@@ -5,7 +5,7 @@ var time_left: int = 30
 
 @onready var label: Label = %Label
 @onready var changelevel: Timer = $changelevel
-@onready var timerlabel: Label = $timerlabel
+#@onready var timerlabel: Label = $timerlabel
 
 
 func increase_score():
@@ -34,20 +34,20 @@ func _on_killzone_body_entered(body: Node3D) -> void:
 
 # --- TIMER LOGIC ---
 
-func _ready() -> void:
-	time_left = 30
-	timerlabel.text = str(time_left)
-	changelevel.start()  # Starts ticking every 1 second
+#func _ready() -> void:
+	#time_left = 30
+	#timerlabel.text = str(time_left)
+	#changelevel.start()  # Starts ticking every 1 second
 
 
-func _on_changelevel_timeout() -> void:
-	time_left -= 1
-	timerlabel.text = str(time_left)
-
-	if time_left <= 0:
-		changelevel.stop()
-		_change_scene()
-
-
-func _change_scene():
-	get_tree().change_scene_to_file("res://seens/level2pre.tscn")
+#func _on_changelevel_timeout() -> void:
+	#time_left -= 1
+	#timerlabel.text = str(time_left)
+#
+	#if time_left <= 0:
+		#changelevel.stop()
+		#_change_scene()
+#
+#
+#func _change_scene():
+	#get_tree().change_scene_to_file("res://seens/level2pre.tscn")

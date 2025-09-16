@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://jd3e68kd07de"]
+[gd_scene load_steps=12 format=4 uid="uid://jd3e68kd07de"]
 
 [ext_resource type="Script" uid="uid://pvmdqi71l3jt" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://ca2d263hljeuj" path="res://player/simple_gun/gun_model_gun_palette.png" id="2_yw30f"]
@@ -53,20 +53,6 @@ font_size = 43
 
 [sub_resource type="LabelSettings" id="LabelSettings_qjkh3"]
 font_size = 58
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw30f"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjkh3"]
-bg_color = Color(0.378799, 0.958406, 0.406389, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yw30f"]
 radius = 0.561969
@@ -132,20 +118,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "x"
 label_settings = SubResource("LabelSettings_qjkh3")
-metadata/_edit_use_anchors_ = true
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-anchors_preset = -1
-anchor_right = 0.075
-offset_left = 100.0
-offset_top = 24.0
-offset_right = 392.0
-offset_bottom = 78.0
-theme_override_styles/background = SubResource("StyleBoxFlat_yw30f")
-theme_override_styles/fill = SubResource("StyleBoxFlat_qjkh3")
-max_value = 10.0
-value = 10.0
-show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Area3D" type="Area3D" parent="."]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5usg5qcujvy6"]
+
+[ext_resource type="Script" uid="uid://uxdbj4wvl4h1" path="res://dump/bachroom.gd" id="1_1ntg1"]
+[ext_resource type="PackedScene" uid="uid://j7mg5885nstb" path="res://dump/room_tile.tscn" id="2_pkwl7"]
+[ext_resource type="AudioStream" uid="uid://prv8v6rnarsr" path="res://dump/white-noise-358382.mp3" id="7_4hwja"]
+[ext_resource type="PackedScene" uid="uid://22upax48r3mt" path="res://seens/level2player.tscn" id="8_r4t0p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ntg1"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_pkwl7"]
+sky_material = SubResource("ProceduralSkyMaterial_1ntg1")
+
+[sub_resource type="Environment" id="Environment_7hf71"]
+background_mode = 2
+sky = SubResource("Sky_pkwl7")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1ntg1")
+room_scene = ExtResource("2_pkwl7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7hf71")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.951056, -0.157766, 0.265709, 0, 0.859852, 0.510543, -0.309017, 0.485555, -0.817768, 0, 0, 0)
+shadow_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4hwja")
+autoplay = true
+
+[node name="level2player" parent="." instance=ExtResource("8_r4t0p")]
+transform = Transform3D(0.34028, 0, 0, 0, 0.34028, 0, 0, 0, 0.34028, 0.654877, 6.96837, 1.86649)

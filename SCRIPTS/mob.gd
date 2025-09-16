@@ -6,7 +6,7 @@ signal died
 @onready var kill: AudioStreamPlayer3D = %kill
 @onready var timer: Timer = %Timer
 @onready var bat_model: Node3D = %bat_model
-@onready var player = get_node("/root/level/Player")
+@onready var player = get_node("/root/level/level2player")
 
 var speed = randf_range(2.0,4.0)
 var health = 3
