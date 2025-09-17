@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4g12vx75upy"]
-
-[ext_resource type="PackedScene" uid="uid://udh3dyf4ij5t" path="res://Assets/walls/brick-wall-end.glb" id="1_peu8e"]
-
-[node name="brick-wall-end2" instance=ExtResource("1_peu8e")]

@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://b7e0tvxf11ihx"]
 
-[ext_resource type="Script" uid="uid://dftw2i01uyn2o" path="res://SCRIPTS/level_2.gd" id="1_ulpc5"]
-[ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://level/checkboard.png" id="3_43fhr"]
-[ext_resource type="Material" uid="uid://c4eqic67btohh" path="res://seens/horrorscence.tres" id="4_tbxqc"]
-[ext_resource type="Texture2D" uid="uid://bilr5urhiptvt" path="res://Assets/free-skybox-space-nebula/textures/space_nebula_6k.jpg" id="5_q4hv4"]
+[ext_resource type="Script" path="res://SCRIPTS/level_2.gd" id="1_ulpc5"]
+[ext_resource type="Texture2D" uid="uid://csu6wvj103dln" path="res://Assets/textures/checkboard.png" id="3_43fhr"]
+[ext_resource type="Material" path="res://seens/horrorscence.tres" id="4_tbxqc"]
+[ext_resource type="Texture2D" uid="uid://bilr5urhiptvt" path="res://Assets/earth-texture/space_nebula_6k.jpg" id="5_q4hv4"]
 [ext_resource type="PackedScene" uid="uid://4bmncsa6lgsr" path="res://seens/portal.tscn" id="6_vrimr"]
 [ext_resource type="PackedScene" uid="uid://22upax48r3mt" path="res://seens/level2player.tscn" id="7_ulpc5"]
 [ext_resource type="AudioStream" uid="uid://bovnk56u4u1h6" path="res://Assets/sounds/Death Note - Kira Evil Laugh.mp3" id="7_vb86l"]
-[ext_resource type="AudioStream" uid="uid://hsflgjaoscb7" path="res://addons/audio/out-of-breath-male-176715.mp3" id="8_43fhr"]
-[ext_resource type="AudioStream" uid="uid://cxa0k4yy5jpdv" path="res://addons/audio/scary-breath-43729.mp3" id="9_tbxqc"]
+[ext_resource type="AudioStream" path="res://addons/audio/out-of-breath-male-176715.mp3" id="8_43fhr"]
+[ext_resource type="AudioStream" uid="uid://cxa0k4yy5jpdv" path="res://Assets/audio/scary-breath-43729.mp3" id="9_tbxqc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp1dk"]
 albedo_color = Color(0.249815, 0.237352, 0, 1)

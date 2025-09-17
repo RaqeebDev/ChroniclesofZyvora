@@ -6,7 +6,7 @@
 render_priority = 0
 shader = ExtResource("1_to7i3")
 shader_parameter/Color_Intensity = 4.5
-shader_parameter/portal_color = Color(1, 0.24524, 0.187846, 1)
+shader_parameter/portal_color = Color(0, 0, 0.501961, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c0yju"]
 

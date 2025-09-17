@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://22upax48r3mt"]
 
-[ext_resource type="Script" uid="uid://bx52f83bmmhtj" path="res://SCRIPTS/level_2_player.gd" id="1_q8kwt"]
+[ext_resource type="Script" uid="uid://bx52f83bmmhtj" path="res://scripts/level_2_player.gd" id="1_q8kwt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pho6p"]
 
@@ -24,7 +24,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="level2player" type="CharacterBody3D" groups=["player"]]
+[node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0508664, 0, 0)
 collision_layer = 3
 collision_mask = 3

@@ -1,246 +1,139 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtp1t81n6yttq"]
+[gd_scene load_steps=16 format=3 uid="uid://dtp1t81n6yttq"]
 
-[ext_resource type="Script" uid="uid://cf50ytwwx62gx" path="res://SCRIPTS/checkpoint.gd" id="1_bwjwj"]
+[ext_resource type="Script" uid="uid://vshybqnjuhpn" path="res://scripts/checkpt.gd" id="1_ybw15"]
+[ext_resource type="FontFile" uid="uid://clxdvs1of8sa4" path="res://Assets/font/conjuring.ttf" id="2_ybw15"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_uj7no"]
+[sub_resource type="Animation" id="Animation_cij3f"]
+resource_name = "CheckPt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CheckPtLabel:label_settings:font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [41, 141]
+}
+
+[sub_resource type="Animation" id="Animation_qw8rq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CheckPtLabel:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [40]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d72ac"]
+_data = {
+&"CheckPt": SubResource("Animation_cij3f"),
+&"RESET": SubResource("Animation_qw8rq")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lau2"]
+font = ExtResource("2_ybw15")
+font_size = 40
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybw15"]
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_cij3f"]
+lightmap_size_hint = Vector2i(5, 7)
+material = SubResource("StandardMaterial3D_ybw15")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Gradient" id="Gradient_ybw15"]
+offsets = PackedFloat32Array(0, 0.227679, 0.473214, 0.732187, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 1, 1, 1, 0.0313726, 0.0313726, 1, 0.205613, 0.598413, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_qw8rq"]
+offsets = PackedFloat32Array(0.328431, 0.348039, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.949495, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d72ac"]
+gradient = SubResource("Gradient_qw8rq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lau2"]
+albedo_texture = SubResource("GradientTexture1D_d72ac")
+
+[sub_resource type="PrismMesh" id="PrismMesh_iak34"]
+material = SubResource("StandardMaterial3D_0lau2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bwjwj"]
+size = Vector3(1.19421, 1.8634, 1.15778)
 
-[sub_resource type="FontFile" id="FontFile_bwjwj"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/32/0/ascent = 0.0
-cache/0/32/0/descent = 0.0
-cache/0/32/0/underline_position = 0.0
-cache/0/32/0/underline_thickness = 0.0
-cache/0/32/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/33/0/ascent = 0.0
-cache/0/33/0/descent = 0.0
-cache/0/33/0/underline_position = 0.0
-cache/0/33/0/underline_thickness = 0.0
-cache/0/33/0/scale = 1.0
-cache/0/34/0/ascent = 0.0
-cache/0/34/0/descent = 0.0
-cache/0/34/0/underline_position = 0.0
-cache/0/34/0/underline_thickness = 0.0
-cache/0/34/0/scale = 1.0
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
-cache/0/36/0/ascent = 0.0
-cache/0/36/0/descent = 0.0
-cache/0/36/0/underline_position = 0.0
-cache/0/36/0/underline_thickness = 0.0
-cache/0/36/0/scale = 1.0
-cache/0/37/0/ascent = 0.0
-cache/0/37/0/descent = 0.0
-cache/0/37/0/underline_position = 0.0
-cache/0/37/0/underline_thickness = 0.0
-cache/0/37/0/scale = 1.0
-cache/0/38/0/ascent = 0.0
-cache/0/38/0/descent = 0.0
-cache/0/38/0/underline_position = 0.0
-cache/0/38/0/underline_thickness = 0.0
-cache/0/38/0/scale = 1.0
-cache/0/39/0/ascent = 0.0
-cache/0/39/0/descent = 0.0
-cache/0/39/0/underline_position = 0.0
-cache/0/39/0/underline_thickness = 0.0
-cache/0/39/0/scale = 1.0
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/41/0/ascent = 0.0
-cache/0/41/0/descent = 0.0
-cache/0/41/0/underline_position = 0.0
-cache/0/41/0/underline_thickness = 0.0
-cache/0/41/0/scale = 1.0
-cache/0/42/0/ascent = 0.0
-cache/0/42/0/descent = 0.0
-cache/0/42/0/underline_position = 0.0
-cache/0/42/0/underline_thickness = 0.0
-cache/0/42/0/scale = 1.0
-cache/0/43/0/ascent = 0.0
-cache/0/43/0/descent = 0.0
-cache/0/43/0/underline_position = 0.0
-cache/0/43/0/underline_thickness = 0.0
-cache/0/43/0/scale = 1.0
-cache/0/44/0/ascent = 0.0
-cache/0/44/0/descent = 0.0
-cache/0/44/0/underline_position = 0.0
-cache/0/44/0/underline_thickness = 0.0
-cache/0/44/0/scale = 1.0
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/46/0/ascent = 0.0
-cache/0/46/0/descent = 0.0
-cache/0/46/0/underline_position = 0.0
-cache/0/46/0/underline_thickness = 0.0
-cache/0/46/0/scale = 1.0
-cache/0/47/0/ascent = 0.0
-cache/0/47/0/descent = 0.0
-cache/0/47/0/underline_position = 0.0
-cache/0/47/0/underline_thickness = 0.0
-cache/0/47/0/scale = 1.0
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-cache/0/49/0/ascent = 0.0
-cache/0/49/0/descent = 0.0
-cache/0/49/0/underline_position = 0.0
-cache/0/49/0/underline_thickness = 0.0
-cache/0/49/0/scale = 1.0
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/51/0/ascent = 0.0
-cache/0/51/0/descent = 0.0
-cache/0/51/0/underline_position = 0.0
-cache/0/51/0/underline_thickness = 0.0
-cache/0/51/0/scale = 1.0
-cache/0/52/0/ascent = 0.0
-cache/0/52/0/descent = 0.0
-cache/0/52/0/underline_position = 0.0
-cache/0/52/0/underline_thickness = 0.0
-cache/0/52/0/scale = 1.0
-cache/0/53/0/ascent = 0.0
-cache/0/53/0/descent = 0.0
-cache/0/53/0/underline_position = 0.0
-cache/0/53/0/underline_thickness = 0.0
-cache/0/53/0/scale = 1.0
-cache/0/54/0/ascent = 0.0
-cache/0/54/0/descent = 0.0
-cache/0/54/0/underline_position = 0.0
-cache/0/54/0/underline_thickness = 0.0
-cache/0/54/0/scale = 1.0
-cache/0/55/0/ascent = 0.0
-cache/0/55/0/descent = 0.0
-cache/0/55/0/underline_position = 0.0
-cache/0/55/0/underline_thickness = 0.0
-cache/0/55/0/scale = 1.0
-cache/0/56/0/ascent = 0.0
-cache/0/56/0/descent = 0.0
-cache/0/56/0/underline_position = 0.0
-cache/0/56/0/underline_thickness = 0.0
-cache/0/56/0/scale = 1.0
-cache/0/57/0/ascent = 0.0
-cache/0/57/0/descent = 0.0
-cache/0/57/0/underline_position = 0.0
-cache/0/57/0/underline_thickness = 0.0
-cache/0/57/0/scale = 1.0
-cache/0/58/0/ascent = 0.0
-cache/0/58/0/descent = 0.0
-cache/0/58/0/underline_position = 0.0
-cache/0/58/0/underline_thickness = 0.0
-cache/0/58/0/scale = 1.0
-cache/0/59/0/ascent = 0.0
-cache/0/59/0/descent = 0.0
-cache/0/59/0/underline_position = 0.0
-cache/0/59/0/underline_thickness = 0.0
-cache/0/59/0/scale = 1.0
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/61/0/ascent = 0.0
-cache/0/61/0/descent = 0.0
-cache/0/61/0/underline_position = 0.0
-cache/0/61/0/underline_thickness = 0.0
-cache/0/61/0/scale = 1.0
-cache/0/62/0/ascent = 0.0
-cache/0/62/0/descent = 0.0
-cache/0/62/0/underline_position = 0.0
-cache/0/62/0/underline_thickness = 0.0
-cache/0/62/0/scale = 1.0
-cache/0/63/0/ascent = 0.0
-cache/0/63/0/descent = 0.0
-cache/0/63/0/underline_position = 0.0
-cache/0/63/0/underline_thickness = 0.0
-cache/0/63/0/scale = 1.0
-cache/0/64/0/ascent = 0.0
-cache/0/64/0/descent = 0.0
-cache/0/64/0/underline_position = 0.0
-cache/0/64/0/underline_thickness = 0.0
-cache/0/64/0/scale = 1.0
-cache/0/65/0/ascent = 0.0
-cache/0/65/0/descent = 0.0
-cache/0/65/0/underline_position = 0.0
-cache/0/65/0/underline_thickness = 0.0
-cache/0/65/0/scale = 1.0
-cache/0/66/0/ascent = 0.0
-cache/0/66/0/descent = 0.0
-cache/0/66/0/underline_position = 0.0
-cache/0/66/0/underline_thickness = 0.0
-cache/0/66/0/scale = 1.0
-cache/0/67/0/ascent = 0.0
-cache/0/67/0/descent = 0.0
-cache/0/67/0/underline_position = 0.0
-cache/0/67/0/underline_thickness = 0.0
-cache/0/67/0/scale = 1.0
-cache/0/68/0/ascent = 0.0
-cache/0/68/0/descent = 0.0
-cache/0/68/0/underline_position = 0.0
-cache/0/68/0/underline_thickness = 0.0
-cache/0/68/0/scale = 1.0
-cache/0/69/0/ascent = 0.0
-cache/0/69/0/descent = 0.0
-cache/0/69/0/underline_position = 0.0
-cache/0/69/0/underline_thickness = 0.0
-cache/0/69/0/scale = 1.0
-cache/0/70/0/ascent = 0.0
-cache/0/70/0/descent = 0.0
-cache/0/70/0/underline_position = 0.0
-cache/0/70/0/underline_thickness = 0.0
-cache/0/70/0/scale = 1.0
-cache/0/71/0/ascent = 0.0
-cache/0/71/0/descent = 0.0
-cache/0/71/0/underline_position = 0.0
-cache/0/71/0/underline_thickness = 0.0
-cache/0/71/0/scale = 1.0
-cache/0/72/0/ascent = 0.0
-cache/0/72/0/descent = 0.0
-cache/0/72/0/underline_position = 0.0
-cache/0/72/0/underline_thickness = 0.0
-cache/0/72/0/scale = 1.0
-cache/0/73/0/ascent = 0.0
-cache/0/73/0/descent = 0.0
-cache/0/73/0/underline_position = 0.0
-cache/0/73/0/underline_thickness = 0.0
-cache/0/73/0/scale = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cij3f"]
+albedo_color = Color(0, 0, 0.501961, 1)
 
 [node name="CheckPoint" type="Area3D"]
 transform = Transform3D(1.21493, 0, 0, 0, 0.201648, 0, 0, 0, 1.30048, 0, 0, 0)
-script = ExtResource("1_bwjwj")
+script = ExtResource("1_ybw15")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_uj7no")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d72ac")
+}
+
+[node name="CheckPtLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -21.5
+offset_right = 108.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+label_settings = SubResource("LabelSettings_0lau2")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(-0.55928, 0.828979, 0, -0.828979, -0.55928, 0, 0, 0, 1, -0.0153975, 6.67139, -0.0399272)
+emitting = false
+amount = 500
+lifetime = 3.91
+one_shot = true
+explosiveness = 0.95
+randomness = 1.0
+mesh = SubResource("BoxMesh_cij3f")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+color_ramp = SubResource("Gradient_ybw15")
+color_initial_ramp = SubResource("Gradient_ybw15")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.567508, 0, 0, 0, 0.567508, 0, 0, 0, 0.567508, 0, 0.721841, -0.00782086)
+mesh = SubResource("PrismMesh_iak34")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.03438, 0, 0, 0, 2.93669, 0, 0, 0, 1.04816, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0513306, 0.431702, -0.0397034)
 shape = SubResource("BoxShape3D_bwjwj")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-0.348696, 0.0204809, -0.0128982, 0.00442207, 1.61702, -0.0010248, 0.0045428, -0.00194244, -0.989046, 0.0894016, 4.30911, -0.28864)
-text = "Check Point"
-font = SubResource("FontFile_bwjwj")
-font_size = 73
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0349161, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_cij3f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
