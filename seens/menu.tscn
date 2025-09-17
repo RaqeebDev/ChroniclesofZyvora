@@ -17,6 +17,7 @@ font_size = 256
 script = ExtResource("1_n3vs3")
 
 [node name="mainmenuscence" parent="." instance=ExtResource("1_8f8u1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.380901, 0.208054, 1.06722)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

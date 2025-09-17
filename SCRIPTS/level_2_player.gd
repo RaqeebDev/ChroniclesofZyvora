@@ -8,6 +8,8 @@ const SENSITIVITY = 0.004
 const HIT_STAGGER = 8.0
 var health = 10
 
+var last_checkpoint: Vector3
+
 
 #signal
 signal player_hit  
@@ -29,6 +31,7 @@ var gravity = 9.8
 
 
 func _ready():
+	last_checkpoint = global_transform.origin
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _input(event):
@@ -45,7 +48,9 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-	
+	if global_transform.origin.y < -5: # adjust fall limit
+		respawn()
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -122,3 +127,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func reload_scene():
 	get_tree().reload_current_scene()
+	
+	
+func set_checkpoint(pos: Vector3):
+	last_checkpoint = pos
+
+func respawn():
+	global_transform.origin = last_checkpoint
+	velocity = Vector3.ZERO	
