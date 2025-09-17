@@ -57,16 +57,17 @@ func _give_reward(item: String) -> void:
 	print("Player gets:", item)
 	
 	
-	#add wheel.visible = false
+	
 
 	if item == "High Jump":
 		player.jump_velocity = 6
+		wheel.visible = false
 		await get_tree().create_timer(25.0).timeout
 		player.jump_velocity = 4.8
 		
 	elif item == "No Jump for 25 Seconds":
 		player.can_jump = false
-		
+		wheel.visible = false
 		await get_tree().create_timer(25.0).timeout
 		player.can_jump = true
 		

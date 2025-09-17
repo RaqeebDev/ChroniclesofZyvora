@@ -1104,12 +1104,6 @@ use_collision = true
 size = Vector3(10, 20, 10)
 material = SubResource("StandardMaterial3D_vswm6")
 
-[node name="CSGBox3D57" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-1.90003, -0.00885524, -0.175878, -1.15218, 0.0181108, 0.00888259, 0.872894, 0.0046302, -0.371109, -2.38239, 137.263, 44.9011)
-use_collision = true
-size = Vector3(10, 20, 10)
-material = SubResource("StandardMaterial3D_hhxfy")
-
 [node name="CSGBox3D58" type="CSGBox3D" parent="platforms"]
 transform = Transform3D(-2.18838, -0.010017, 0.18811, -1.33678, 0.0196707, 0.00966887, -1.04702, -0.00417769, -0.405516, -23.6155, 126.813, 46.889)
 use_collision = true
@@ -1117,62 +1111,182 @@ size = Vector3(10, 20, 10)
 material = SubResource("StandardMaterial3D_sp1dk")
 
 [node name="CSGBox3D61" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.775368, 0, -0.63152, 0, 1.00001, 0, 0.63152, 0, -0.775368, 8.34766, 144.656, 39.2186)
+transform = Transform3D(-0.897128, 0, 0.44179, 0, 1.00001, 0, -0.44179, 0, -0.897128, -11.2121, 132.883, 52.1983)
 use_collision = true
 material = SubResource("StandardMaterial3D_3r51i")
 
 [node name="CSGBox3D62" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.775368, 0, -0.63152, 0, 1.00001, 0, 0.63152, 0, -0.775368, 8.63347, 145.691, 36.9018)
+transform = Transform3D(-0.897128, 0, 0.44179, 0, 1.00001, 0, -0.44179, 0, -0.897128, -8.98688, 133.918, 51.493)
 use_collision = true
 material = SubResource("StandardMaterial3D_nfypc")
 
 [node name="CSGBox3D63" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.775368, 0, -0.63152, 0, 1.00001, 0, 0.63152, 0, -0.775368, 8.61197, 147.006, 34.8482)
+transform = Transform3D(-0.897128, 0, 0.44179, 0, 1.00001, 0, -0.44179, 0, -0.897128, -7.12893, 135.233, 50.6179)
 use_collision = true
 material = SubResource("StandardMaterial3D_32ms2")
 
 [node name="CSGBox3D64" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.627724, 0, -0.778446, 0, 1.00001, 0, 0.778446, 0, -0.627724, 8.66906, 147.836, 32.6587)
+transform = Transform3D(-0.969188, 0, 0.246359, 0, 1.00001, 0, -0.246359, 0, -0.969188, -5.11468, 136.063, 49.7577)
 use_collision = true
 material = SubResource("StandardMaterial3D_3r51i")
 
 [node name="CSGBox3D65" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.627725, 0, -0.778447, 0, 1.00001, 0, 0.778447, 0, -0.627725, 8.46876, 148.871, 30.333)
+transform = Transform3D(-0.96919, 0, 0.24636, 0, 1.00001, 0, -0.24636, 0, -0.96919, -3.08385, 137.098, 48.6067)
 use_collision = true
 material = SubResource("StandardMaterial3D_nfypc")
 
 [node name="CSGBox3D66" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.627725, 0, -0.778447, 0, 1.00001, 0, 0.778447, 0, -0.627725, 8.02245, 150.187, 28.3284)
+transform = Transform3D(-0.96919, 0, 0.24636, 0, 1.00001, 0, -0.24636, 0, -0.96919, -1.44742, 138.414, 47.3658)
 use_collision = true
 material = SubResource("StandardMaterial3D_32ms2")
 
 [node name="CSGBox3D67" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.355518, 0, -0.934679, 0, 1.00001, 0, 0.934679, 0, -0.355518, 7.31936, 150.646, 26.305)
+transform = Transform3D(-0.997818, 0, -0.0661875, 0, 1.00001, 0, 0.0661875, 0, -0.997818, 0.099128, 138.873, 45.8837)
 use_collision = true
 material = SubResource("StandardMaterial3D_3r51i")
 
 [node name="CSGBox3D68" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.35552, 0, -0.93468, 0, 1.00001, 0, 0.93468, 0, -0.35552, 6.40795, 151.681, 24.1559)
+transform = Transform3D(-0.997819, 0, -0.0661861, 0, 1.00001, 0, 0.0661861, 0, -0.997819, 1.67317, 139.908, 44.1599)
 use_collision = true
 material = SubResource("StandardMaterial3D_nfypc")
 
 [node name="CSGBox3D69" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.355518, 0, -0.93468, 0, 1.00002, 0, 0.93468, 0, -0.355518, 5.36225, 152.996, 22.3885)
+transform = Transform3D(-0.997819, 0, -0.0661879, 0, 1.00002, 0, 0.0661879, 0, -0.997819, 2.84426, 141.223, 42.4729)
 use_collision = true
 material = SubResource("StandardMaterial3D_32ms2")
 
 [node name="CSGBox3D70" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.355518, 0, -0.93468, 0, 1.00002, 0, 0.93468, 0, -0.355518, 3.74335, 153.284, 21.1896)
+transform = Transform3D(-0.997819, 0, -0.0661879, 0, 1.00002, 0, 0.0661879, 0, -0.997819, 3.25974, 141.511, 40.5017)
 use_collision = true
 material = SubResource("StandardMaterial3D_3r51i")
 
 [node name="CSGBox3D71" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.355518, 0, -0.93468, 0, 1.00002, 0, 0.93468, 0, -0.355518, 2.83204, 154.319, 19.0404)
+transform = Transform3D(-0.997819, 0, -0.0661879, 0, 1.00002, 0, 0.0661879, 0, -0.997819, 4.83391, 142.546, 38.7779)
 use_collision = true
 material = SubResource("StandardMaterial3D_nfypc")
 
 [node name="CSGBox3D72" type="CSGBox3D" parent="platforms"]
-transform = Transform3D(-0.35552, 0, -0.934681, 0, 1.00002, 0, 0.934681, 0, -0.35552, 1.78635, 155.634, 17.273)
+transform = Transform3D(-0.99782, 0, -0.0661865, 0, 1.00002, 0, 0.0661865, 0, -0.99782, 6.00501, 143.861, 37.091)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D212" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.233992, 0, -0.972248, 0, 1.00001, 0, 0.972248, 0, 0.233992, 5.09152, 144.78, 35.4172)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D213" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.233992, 0, -0.972248, 0, 1.00001, 0, 0.972248, 0, 0.233992, 3.12631, 145.815, 34.1574)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D214" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.233992, 0, -0.972248, 0, 1.00001, 0, 0.972248, 0, 0.233992, 1.26547, 147.13, 33.2885)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D215" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.430326, 0, -0.902685, 0, 1.00001, 0, 0.902685, 0, 0.430326, -0.683932, 147.96, 32.2899)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D216" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.430327, 0, -0.902687, 0, 1.00001, 0, 0.902687, 0, 0.430327, -2.86744, 148.995, 31.4645)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D217" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.430327, 0, -0.902687, 0, 1.00001, 0, 0.902687, 0, 0.430327, -4.86786, 150.311, 30.9998)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D218" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688932, 0, -0.724843, 0, 1.00001, 0, 0.724843, 0, 0.688932, -6.9963, 150.77, 30.7585)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D219" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688933, 0, -0.724845, 0, 1.00001, 0, 0.724845, 0, 0.688933, -9.32819, 151.805, 30.6506)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D220" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688933, 0, -0.724843, 0, 1.00002, 0, 0.724843, 0, 0.688933, -11.374, 153.12, 30.8289)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D221" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688933, 0, -0.724843, 0, 1.00002, 0, 0.724843, 0, 0.688933, -13.1552, 153.408, 31.7699)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D222" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688933, 0, -0.724843, 0, 1.00002, 0, 0.724843, 0, 0.688933, -15.4872, 154.443, 31.6619)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D223" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.688933, 0, -0.724845, 0, 1.00002, 0, 0.724845, 0, 0.688933, -17.533, 155.758, 31.8402)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D224" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.988387, 0, 0.152023, 0, 1.00002, 0, -0.152023, 0, 0.988387, -19.0602, 157.052, 32.72)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D225" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.988387, 0, 0.152023, 0, 1.00002, 0, -0.152023, 0, 0.988387, -20.4796, 158.087, 34.5732)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D226" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.988387, 0, 0.152023, 0, 1.00002, 0, -0.152023, 0, 0.988387, -21.5009, 159.401, 36.3551)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D227" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.935456, 0, 0.353479, 0, 1.00002, 0, -0.353479, 0, 0.935456, -22.6586, 160.232, 38.2143)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D228" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.935457, 0, 0.353479, 0, 1.00002, 0, -0.353479, 0, 0.935457, -23.6634, 161.267, 40.3213)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D229" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.935457, 0, 0.353479, 0, 1.00002, 0, -0.353479, 0, 0.935457, -24.2935, 162.583, 42.276)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D230" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779818, 0, 0.626027, 0, 1.00002, 0, -0.626027, 0, 0.779818, -24.7116, 163.042, 44.3768)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D231" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779821, 0, 0.626027, 0, 1.00002, 0, -0.626027, 0, 0.779821, -25.0138, 164.077, 46.6916)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D232" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779819, 0, 0.626028, 0, 1.00003, 0, -0.626028, 0, 0.779819, -25.0069, 165.392, 48.7451)
+use_collision = true
+material = SubResource("StandardMaterial3D_32ms2")
+
+[node name="CSGBox3D233" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779819, 0, 0.626028, 0, 1.00003, 0, -0.626028, 0, 0.779819, -24.2178, 165.68, 50.5987)
+use_collision = true
+material = SubResource("StandardMaterial3D_3r51i")
+
+[node name="CSGBox3D234" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779819, 0, 0.626028, 0, 1.00003, 0, -0.626028, 0, 0.779819, -24.5201, 166.715, 52.9135)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfypc")
+
+[node name="CSGBox3D235" type="CSGBox3D" parent="platforms"]
+transform = Transform3D(0.779821, 0, 0.626028, 0, 1.00003, 0, -0.626028, 0, 0.779821, -24.5132, 168.029, 54.9671)
 use_collision = true
 material = SubResource("StandardMaterial3D_32ms2")
 
@@ -1524,7 +1638,7 @@ label_settings = SubResource("LabelSettings_gjk8o")
 autostart = true
 
 [node name="player" parent="." instance=ExtResource("4_yrjqa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07705, -0.187223, 19.1487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6958, 67.998, 33.9177)
 
 [node name="CheckPoints" type="Node3D" parent="."]
 
