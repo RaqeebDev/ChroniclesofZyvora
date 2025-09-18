@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://22upax48r3mt"]
+[gd_scene load_steps=9 format=3 uid="uid://22upax48r3mt"]
 
-[ext_resource type="Script" uid="uid://bx52f83bmmhtj" path="res://scripts/level_2_player.gd" id="1_q8kwt"]
+[ext_resource type="Script" uid="uid://bx52f83bmmhtj" path="res://scripts/player.gd" id="1_q8kwt"]
+[ext_resource type="FontFile" uid="uid://clxdvs1of8sa4" path="res://Assets/font/conjuring.ttf" id="2_al03a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pho6p"]
 
@@ -23,6 +24,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_ko2jt"]
+font = ExtResource("2_al03a")
+font_size = 77
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0508664, 0, 0)
@@ -65,5 +70,13 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 1821.0
+offset_top = 26.0
+offset_right = 1897.0
+offset_bottom = 107.0
+text = "25"
+label_settings = SubResource("LabelSettings_ko2jt")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

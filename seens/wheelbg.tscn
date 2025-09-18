@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2eyp6hufavl0"]
+[gd_scene load_steps=7 format=3 uid="uid://c2eyp6hufavl0"]
 
 [ext_resource type="Texture2D" uid="uid://dvg8ig1moq7wy" path="res://Assets/textures/Your paragraph text (2).png" id="1_bsaen"]
 [ext_resource type="Script" uid="uid://dol2akv58cves" path="res://scripts/wheel.gd" id="2_bsaen"]
@@ -9,13 +9,19 @@
 font = ExtResource("2_uwq55")
 font_size = 39
 
+[sub_resource type="LabelSettings" id="LabelSettings_bpfu2"]
+font = ExtResource("2_uwq55")
+font_size = 82
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="wheel" type="CanvasLayer"]
+script = ExtResource("2_bsaen")
 
 [node name="WheelSprite" type="Sprite2D" parent="."]
 position = Vector2(940, 530)
 texture = ExtResource("1_bsaen")
 offset = Vector2(-3, -20)
-script = ExtResource("2_bsaen")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 3
@@ -43,10 +49,22 @@ color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(0, 0, -20, -40, 20, -40)
 script = ExtResource("4_d6aa0")
 
-[node name="Label" type="Label" parent="."]
+[node name="PressL" type="Label" parent="."]
 offset_left = 1641.0
 offset_top = 822.0
 offset_right = 1790.0
 offset_bottom = 863.0
-text = "Press \"s\""
+text = "Press \"L\""
 label_settings = SubResource("LabelSettings_d6aa0")
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 175.0
+grow_horizontal = 2
+text = "25
+"
+label_settings = SubResource("LabelSettings_bpfu2")

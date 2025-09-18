@@ -31,6 +31,7 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var label_timer: Label = $TimerLabel
 
 
 
@@ -139,3 +140,32 @@ func set_checkpoint(pos: Vector3):
 func respawn():
 	global_transform.origin = last_checkpoint
 	velocity = Vector3.ZERO	
+	
+	
+func effect_timer():
+	pass
+	
+	
+	
+var countdown_timer = 0  # make this a class variable
+
+func _start_timer(seconds: int, text: String) -> void:
+	label_timer.visible = true
+	countdown_timer = seconds
+	label_timer.text = " %d" % [countdown_timer]
+
+	var timer := Timer.new()
+	timer.wait_time = 1.0
+	timer.one_shot = false
+	timer.autostart = true
+	add_child(timer)
+
+	timer.timeout.connect(func() -> void:
+		countdown_timer -= 1
+		if countdown_timer >= 0:
+			label_timer.text = " %d" % [countdown_timer]
+		else:
+			timer.stop()
+			timer.queue_free()
+			label_timer.visible = false
+	)

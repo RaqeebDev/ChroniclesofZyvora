@@ -33,8 +33,8 @@ func _on_body_entered(body: Node3D) -> void:
 		body.set_checkpoint(global_transform.origin)
 		
 		#hide wheel ig
-		await get_tree().create_timer(12.0).timeout
-		wheel_instance.queue_free()
+		#await get_tree().create_timer(12.0).timeout
+		#wheel_instance.queue_free()
 			
 
 func show_label_temporarily(label: Label, time_sec: float) -> void:
