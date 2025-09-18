@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://tiikosphhxau"]
 
-[ext_resource type="Script" uid="uid://datwlj7hmgy64" path="res://SCRIPTS/mob.gd" id="1_njmu8"]
+[ext_resource type="Script" uid="uid://datwlj7hmgy64" path="res://scripts/mob.gd" id="1_njmu8"]
 [ext_resource type="PackedScene" uid="uid://cijh4wjuhk1mc" path="res://seens/bat_model.tscn" id="1_o6wjy"]
 [ext_resource type="AudioStream" uid="uid://cgfglylbtbsy" path="res://mob/mob_take_damage.wav" id="3_ej2qf"]
 [ext_resource type="AudioStream" uid="uid://b66bme0u1m7j8" path="res://mob/mob_ko.wav" id="4_xqfdl"]

@@ -4,10 +4,10 @@ var spinning = false
 var spin_velocity = 0.0
 var friction = 0.98
 
-
+var input_blocked = false
 
 @onready var player = get_node("/root/level/player")
-@onready var wheel = get_node("/root/level/wheel")
+#@onready var wheel = get_node("/root/level/wheel")
 
 var rewards = ["High Jump", "No Jump for 25 Seconds"]
 var slice_count = rewards.size()
@@ -31,8 +31,12 @@ func _process(delta: float) -> void:
 			_on_spin_finished()
 
 func on_button_pressed():
-	spin_velocity = randf_range(200, 500)
-	spinning = true
+		if input_blocked == true:
+			return
+		else:
+			input_blocked =  true
+			spin_velocity = randf_range(200, 500)
+			spinning = true
 
 func _on_spin_finished():
 	var slice_size = TAU / slice_count
@@ -61,13 +65,19 @@ func _give_reward(item: String) -> void:
 
 	if item == "High Jump":
 		player.jump_velocity = 6
-		wheel.visible = false
+		#wheel.visible = false 
+		
 		await get_tree().create_timer(25.0).timeout
+		input_blocked = false
 		player.jump_velocity = 4.8
+		#wheel.queue_free()
 		
 	elif item == "No Jump for 25 Seconds":
 		player.can_jump = false
-		wheel.visible = false
+		
+		#wheel.visible = false
 		await get_tree().create_timer(25.0).timeout
+		input_blocked = false
 		player.can_jump = true
+		#wheel.queue_free()
 		

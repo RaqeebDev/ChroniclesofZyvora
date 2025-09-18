@@ -51,3 +51,8 @@ func _on_killzone_body_entered(body: Node3D) -> void:
 #
 #func _change_scene():
 	#get_tree().change_scene_to_file("res://seens/level2pre.tscn")
+	
+	
+	
+	
+	

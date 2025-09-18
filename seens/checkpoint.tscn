@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtp1t81n6yttq"]
+[gd_scene load_steps=17 format=3 uid="uid://dtp1t81n6yttq"]
 
 [ext_resource type="Script" uid="uid://vshybqnjuhpn" path="res://scripts/checkpt.gd" id="1_ybw15"]
+[ext_resource type="PackedScene" uid="uid://c2eyp6hufavl0" path="res://seens/wheelbg.tscn" id="2_cij3f"]
 [ext_resource type="FontFile" uid="uid://clxdvs1of8sa4" path="res://Assets/font/conjuring.ttf" id="2_ybw15"]
 
 [sub_resource type="Animation" id="Animation_cij3f"]
@@ -79,6 +80,7 @@ albedo_color = Color(0, 0, 0.501961, 1)
 [node name="CheckPoint" type="Area3D"]
 transform = Transform3D(1.21493, 0, 0, 0, 0.201648, 0, 0, 0, 1.30048, 0, 0, 0)
 script = ExtResource("1_ybw15")
+wheel_scene = ExtResource("2_cij3f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

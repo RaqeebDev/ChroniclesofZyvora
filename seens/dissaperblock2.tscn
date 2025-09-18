@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjg5ydt4jtegk"]
+
+[ext_resource type="Script" uid="uid://iwfdaj4ry12i" path="res://scripts/dissaperblock.gd" id="1_kuwat"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cywjb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kuwat"]
+material = SubResource("StandardMaterial3D_cywjb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cywjb"]
+size = Vector3(1.2417, 1, 4.1015)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avjfq"]
+
+[node name="dissapear block" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.27714, 0, 0, 0, 0.427119, 0, 0, 0, 3.81951, -0.0622001, 0.11191, -0.143159)
+mesh = SubResource("BoxMesh_kuwat")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_kuwat")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12085, 0, 0.00692749)
+shape = SubResource("BoxShape3D_cywjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.27714, 0, 0, 0, 0.427119, 0, 0, 0, 3.81951, -0.0622001, 0.11191, -0.143159)
+shape = SubResource("BoxShape3D_avjfq")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

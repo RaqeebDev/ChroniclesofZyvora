@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm6k41qvt3r6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5bi4"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdqvo"]
+material = SubResource("StandardMaterial3D_f5bi4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1jyx"]
+size = Vector3(1, 0.0718384, 0.0492401)
+
+[node name="killerlight" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.34419, 0, 0, 0, 0.211889, 0, 0, 0, 0.17685, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_mdqvo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00326538, 0.00202179)
+shape = SubResource("BoxShape3D_h1jyx")

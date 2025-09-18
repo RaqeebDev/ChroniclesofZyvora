@@ -18,19 +18,23 @@ offset = Vector2(-3, -20)
 script = ExtResource("2_bsaen")
 
 [node name="Button" type="Button" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 1560.0
-offset_top = 867.0
-offset_right = 1860.0
-offset_bottom = 1004.0
-grow_horizontal = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -209.0
+offset_right = -59.0
+offset_bottom = -54.0
+grow_horizontal = 0
+grow_vertical = 0
 pivot_offset = Vector2(82, 27)
 theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_uwq55")
 theme_override_font_sizes/font_size = 140
 text = "SPIN"
+metadata/_edit_use_anchors_ = true
 
 [node name="Pointer" type="Polygon2D" parent="."]
 position = Vector2(938, 268)

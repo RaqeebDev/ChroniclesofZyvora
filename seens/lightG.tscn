@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bypaavyhgkiaa"]
+
+[ext_resource type="AudioStream" uid="uid://bbnhu67482rkr" path="res://Assets/audio/piano-g-6200.mp3" id="1_5far5"]
+[ext_resource type="Script" uid="uid://cgamjkodaksxk" path="res://scripts/light_g.gd" id="1_foqan"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foqan"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlclu"]
+material = SubResource("StandardMaterial3D_foqan")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kiq36"]
+size = Vector3(1, 0.0718384, 0.0492401)
+
+[node name="LightG" type="Area3D"]
+script = ExtResource("1_foqan")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0635142, 0, 0, 0, 0.0444758, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_wlclu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0, 1, 1)
+
+[node name="piano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5far5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00326538, 0.00202179)
+shape = SubResource("BoxShape3D_kiq36")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
