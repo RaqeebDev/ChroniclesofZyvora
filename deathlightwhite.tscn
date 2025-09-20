@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbp6jii7knbjk"]
+
+[ext_resource type="Script" uid="uid://bs1r5y2l8eus0" path="res://scripts/deathlight.gd" id="1_ktshe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktshe"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pewfy"]
+height = 1.94336
+radius = 2.86035
+
+[node name="deathlight" type="Area3D"]
+script = ExtResource("1_ktshe")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.00011, 0, 0, 0, -4.5479e-05, -1.00011, 0, 12.5633, -3.62039e-06, 0, 0, 0)
+use_collision = true
+radius = 3.5
+sides = 48
+material = SubResource("StandardMaterial3D_ktshe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2426, 0, 0, 0, -5.80258e-07, -1.2426, 0, 13.2748, -5.43156e-08, 0, 1.64331e-08, -0.375946)
+shape = SubResource("CylinderShape3D_pewfy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_area_3d_body_entered"]

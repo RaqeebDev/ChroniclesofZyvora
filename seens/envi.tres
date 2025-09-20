@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=4 format=3 uid="uid://bely8qfioes6r"]
 
-[ext_resource type="Texture2D" uid="uid://dsqwcnejjyxnh" path="res://Assets/earth-texture/clouds_anime_6k.jpg" id="1_5a2w7"]
+[ext_resource type="Texture2D" uid="uid://bilr5urhiptvt" path="res://Assets/earth-texture/space_nebula_6k.jpg" id="1_5a2w7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5a2w7"]
 panorama = ExtResource("1_5a2w7")
@@ -15,7 +15,13 @@ background_energy_multiplier = 0.7
 sky = SubResource("Sky_q3oh7")
 ambient_light_color = Color(0.768627, 0.690196, 0.643137, 1)
 tonemap_mode = 2
-fog_light_color = Color(0.109804, 0.376471, 0.509804, 1)
-fog_density = 0.0
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 9.86
+fog_density = 1.0
+fog_aerial_perspective = 0.857
+fog_sky_affect = 0.495
 fog_height = -216.78
 fog_height_density = 4.2105

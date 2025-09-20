@@ -72,6 +72,8 @@ func _give_reward(item: String) -> void:
 		player.can_jump = false
 		print("Jump disabled")
 		visible = false
+
+
 		
 		player._start_timer(25, "Jump Disabled")
 		await get_tree().create_timer(25.0).timeout
@@ -81,3 +83,20 @@ func _give_reward(item: String) -> void:
 		queue_free()
 		
 #Count Down
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Stream PAUSED !!

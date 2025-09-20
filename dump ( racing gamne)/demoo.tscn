@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://rpxyc3alle8d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbae6"]
+albedo_color = Color(0.171525, 0.984291, 0, 1)
+
+[node name="Demoo" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.997259, -0.0739866, 0, 0.0739866, 0.997259, 1.27343, 2.94996, 1.27227)
+use_collision = true
+size = Vector3(72.4318, 0.2, 74.0968)
+material = SubResource("StandardMaterial3D_kbae6")

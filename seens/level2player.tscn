@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://22upax48r3mt"]
+[gd_scene load_steps=10 format=3 uid="uid://22upax48r3mt"]
 
 [ext_resource type="Script" uid="uid://bx52f83bmmhtj" path="res://scripts/player.gd" id="1_q8kwt"]
 [ext_resource type="FontFile" uid="uid://clxdvs1of8sa4" path="res://Assets/font/conjuring.ttf" id="2_al03a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pho6p"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al03a"]
+albedo_color = Color(0.0231395, 0.927525, 3.85046e-07, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_al03a"]
+material = SubResource("StandardMaterial3D_al03a")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q8kwt"]
 radius = 0.561969
@@ -50,11 +54,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53168, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(0.620052, 0, 0, 0, 0.611791, 0.100875, 0, -0.100875, 0.611791, 0, 0, -0.198477)
 fov = 51.9823
+far = 20.0
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.17664, 0, 0, 0, 1, 0, 0, 0, 1.02243, 0, 0.954378, 0)
+transform = Transform3D(0.790964, 0, 0, 0, 0.862977, 0, 0, 0, 0.817447, 0, 0.954378, 0)
 shape = SubResource("CapsuleShape3D_q8kwt")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
